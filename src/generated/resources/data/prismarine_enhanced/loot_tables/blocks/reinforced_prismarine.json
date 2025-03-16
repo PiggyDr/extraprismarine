@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:air"
+          "name": "prismarine_enhanced:reinforced_prismarine"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "extraprismarine:blocks/prismarine_pillar"
+  "random_sequence": "prismarine_enhanced:blocks/reinforced_prismarine"
 }

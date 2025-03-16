@@ -1,4 +1,4 @@
-package com.piggydragons.extraprismarine.blocks;
+package com.piggydragons.prismarineenhanced.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelReader;

@@ -1,6 +1,6 @@
-package com.piggydragons.extraprismarine.blocks;
+package com.piggydragons.prismarineenhanced.blocks;
 
-import com.piggydragons.extraprismarine.ExtraPrismarine;
+import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -13,9 +13,9 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class EPBlocks {
+public class PEBlocks {
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ExtraPrismarine.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, PrismarineEnhanced.MOD_ID);
     private static final BlockBehaviour.Properties PRISMARINE_PROP = BlockBehaviour.Properties.copy(Blocks.PRISMARINE);
 
     public static final RegistryObject<ConduitFrameBlock> CUT_PRISMARINE = prismarineBlock("cut_prismarine");
@@ -32,7 +32,7 @@ public class EPBlocks {
 
     private static <T extends Block> RegistryObject<T> blockItem(String id, Supplier<T> sup) {
         RegistryObject<T> block = BLOCKS.register(id, sup);
-        EPItems.ITEMS.register(id, () -> new BlockItem(block.get(), new Item.Properties()));
+        PEItems.ITEMS.register(id, () -> new BlockItem(block.get(), new Item.Properties()));
         return block;
     }
 }

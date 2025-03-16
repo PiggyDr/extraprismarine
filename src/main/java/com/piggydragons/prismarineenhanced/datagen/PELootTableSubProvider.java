@@ -1,24 +1,23 @@
-package com.piggydragons.extraprismarine.datagen;
+package com.piggydragons.prismarineenhanced.datagen;
 
-import com.piggydragons.extraprismarine.blocks.EPBlocks;
+import com.piggydragons.prismarineenhanced.blocks.PEBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.Collections;
 import java.util.Set;
 
-public class EPLootTableSubProvider extends BlockLootSubProvider {
+public class PELootTableSubProvider extends BlockLootSubProvider {
 
-    protected EPLootTableSubProvider() {
+    protected PELootTableSubProvider() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
 
     @Override
     protected void generate() {
-        for(RegistryObject<Block> regBlock : EPBlocks.BLOCKS.getEntries()) {
+        for(RegistryObject<Block> regBlock : PEBlocks.BLOCKS.getEntries()) {
             Block block = regBlock.get();
             if (block instanceof SlabBlock) this.createSlabItemTable(block);
             else this.dropSelf(block);
@@ -27,6 +26,6 @@ public class EPLootTableSubProvider extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return EPBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList();
+        return PEBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList();
     }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-16T12:39:15.9099595	Loot Tables
-b42ba7a7baf8001ffd4e751b55b1b76a454ba897 data/extraprismarine/loot_tables/blocks/cut_prismarine.json
-9d8467340a4fa98d2468bcf1d68e3d51a7957692 data/extraprismarine/loot_tables/blocks/prismarine_pillar.json
-80c80256afd73eef4bbbcddb535024d67b034b9a data/extraprismarine/loot_tables/blocks/reinforced_prismarine.json
+// 1.20.1	2025-03-16T13:46:32.8983868	Loot Tables
+b160fa5d3bd52e4672efc7d83d172260fc2a2644 data/prismarine_enhanced/loot_tables/blocks/cut_prismarine.json
+2728aa418c70c446072def5bb9bae0e710e180d5 data/prismarine_enhanced/loot_tables/blocks/prismarine_pillar.json
+bf21c118ccd76de34c07b6d0e428d78c26e26e0e data/prismarine_enhanced/loot_tables/blocks/reinforced_prismarine.json
