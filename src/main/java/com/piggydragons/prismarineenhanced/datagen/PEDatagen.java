@@ -20,6 +20,7 @@ public class PEDatagen {
         // client
         generator.addProvider(event.includeClient(), new PEModelProvider(packOutput, efh));
         generator.addProvider(event.includeClient(), new PEBlockStateProvider(packOutput, efh));
+        generator.addProvider(event.includeClient(), new PELangProvider(packOutput));
 
         // server
         generator.addProvider(event.includeServer(), new LootTableProvider(
