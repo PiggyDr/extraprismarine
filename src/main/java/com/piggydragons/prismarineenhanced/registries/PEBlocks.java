@@ -1,6 +1,7 @@
-package com.piggydragons.prismarineenhanced.blocks;
+package com.piggydragons.prismarineenhanced.registries;
 
 import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
+import com.piggydragons.prismarineenhanced.blocks.ConduitFrameBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

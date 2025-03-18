@@ -1,9 +1,10 @@
 package com.piggydragons.prismarineenhanced;
 
 import com.mojang.logging.LogUtils;
-import com.piggydragons.prismarineenhanced.blocks.PEBlocks;
-import com.piggydragons.prismarineenhanced.blocks.PEItems;
+import com.piggydragons.prismarineenhanced.registries.PEBlocks;
+import com.piggydragons.prismarineenhanced.registries.PEItems;
 import com.piggydragons.prismarineenhanced.datagen.PEDatagen;
+import com.piggydragons.prismarineenhanced.registries.PETab;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -21,6 +22,8 @@ public class PrismarineEnhanced {
 
         PEBlocks.BLOCKS.register(bus);
         PEItems.ITEMS.register(bus);
+        PETab.TABS.register(bus);
+
         bus.addListener(PEDatagen::runDatagen);
     }
 

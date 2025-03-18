@@ -1,4 +1,4 @@
-package com.piggydragons.prismarineenhanced.blocks;
+package com.piggydragons.prismarineenhanced.registries;
 
 import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
 import net.minecraft.world.item.Item;

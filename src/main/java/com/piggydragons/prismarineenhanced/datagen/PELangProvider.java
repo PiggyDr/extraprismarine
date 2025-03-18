@@ -1,7 +1,7 @@
 package com.piggydragons.prismarineenhanced.datagen;
 
 import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
-import com.piggydragons.prismarineenhanced.blocks.PEBlocks;
+import com.piggydragons.prismarineenhanced.registries.PEBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -15,6 +15,8 @@ public class PELangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add("itemGroup.prismarineEnhanced", "Prismarine Enhanced");
+
         for (RegistryObject<Block> regBlock : PEBlocks.BLOCKS.getEntries()) {
             if (!this.data.containsKey(regBlock.get().getDescriptionId()))
                 addBlock(regBlock, nameFromId(regBlock.getId().getPath()));

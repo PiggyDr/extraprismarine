@@ -1,6 +1,6 @@
 package com.piggydragons.prismarineenhanced.datagen;
 
-import com.piggydragons.prismarineenhanced.blocks.PEBlocks;
+import com.piggydragons.prismarineenhanced.registries.PEBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.level.block.Block;

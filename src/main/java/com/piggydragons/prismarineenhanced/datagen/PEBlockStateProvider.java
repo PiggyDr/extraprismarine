@@ -1,7 +1,7 @@
 package com.piggydragons.prismarineenhanced.datagen;
 
 import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
-import com.piggydragons.prismarineenhanced.blocks.PEBlocks;
+import com.piggydragons.prismarineenhanced.registries.PEBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
