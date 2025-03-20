@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "prismarine_enhanced:block/cube_column_consistent_horizontal",
   "textures": {
     "end": "prismarine_enhanced:block/prismarine_pillar_end",
     "side": "prismarine_enhanced:block/prismarine_pillar_side"
