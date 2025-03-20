@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "prismarine_enhanced:block/coraline_prismarine_end",
+    "side": "prismarine_enhanced:block/fire_coraline_prismarine"
+  }
+}

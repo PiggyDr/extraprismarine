@@ -23,6 +23,12 @@ public class PEBlocks {
     public static final RegistryObject<ConduitFrameBlock> REINFORCED_PRISMARINE = prismarineBlock("reinforced_prismarine");
     public static final RegistryObject<ConduitFrameBlock.Pillar> PRISMARINE_PILLAR = prismarineBlock("prismarine_pillar", ConduitFrameBlock.Pillar::new);
 
+    public static final RegistryObject<ConduitFrameBlock> BRAIN_CORALINE_PRISMARINE = prismarineBlock("brain_coraline_prismarine");
+    public static final RegistryObject<ConduitFrameBlock> BUBBLE_CORALINE_PRISMARINE = prismarineBlock("bubble_coraline_prismarine");
+    public static final RegistryObject<ConduitFrameBlock> FIRE_CORALINE_PRISMARINE = prismarineBlock("fire_coraline_prismarine");
+    public static final RegistryObject<ConduitFrameBlock> HORN_CORALINE_PRISMARINE = prismarineBlock("horn_coraline_prismarine");
+    public static final RegistryObject<ConduitFrameBlock> TUBE_CORALINE_PRISMARINE = prismarineBlock("tube_coraline_prismarine");
+
     private static RegistryObject<ConduitFrameBlock> prismarineBlock(String id) {
         return prismarineBlock(id, ConduitFrameBlock::new);
     }

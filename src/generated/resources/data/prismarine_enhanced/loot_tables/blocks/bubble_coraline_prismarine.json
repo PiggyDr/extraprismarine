@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "prismarine_enhanced:bubble_coraline_prismarine"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "prismarine_enhanced:blocks/bubble_coraline_prismarine"
+}

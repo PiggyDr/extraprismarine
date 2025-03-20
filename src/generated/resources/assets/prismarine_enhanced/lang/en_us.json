@@ -1,6 +1,11 @@
 {
+  "block.prismarine_enhanced.brain_coraline_prismarine": "Brain Coraline Prismarine",
+  "block.prismarine_enhanced.bubble_coraline_prismarine": "Bubble Coraline Prismarine",
   "block.prismarine_enhanced.cut_prismarine": "Cut Prismarine",
+  "block.prismarine_enhanced.fire_coraline_prismarine": "Fire Coraline Prismarine",
+  "block.prismarine_enhanced.horn_coraline_prismarine": "Horn Coraline Prismarine",
   "block.prismarine_enhanced.prismarine_pillar": "Prismarine Pillar",
   "block.prismarine_enhanced.reinforced_prismarine": "Reinforced Prismarine",
+  "block.prismarine_enhanced.tube_coraline_prismarine": "Tube Coraline Prismarine",
   "itemGroup.prismarineEnhanced": "Prismarine Enhanced"
 }

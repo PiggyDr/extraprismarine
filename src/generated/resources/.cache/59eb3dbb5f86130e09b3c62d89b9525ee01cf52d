@@ -1,4 +1,9 @@
-// 1.20.1	2025-03-16T13:46:32.8983868	Loot Tables
+// 1.20.1	2025-03-20T11:34:39.7214199	Loot Tables
+8d2ebba5ca16532715eb137684268dab234568d2 data/prismarine_enhanced/loot_tables/blocks/brain_coraline_prismarine.json
+752075a9eac139d650a82df0c0c622a5d4db7d9b data/prismarine_enhanced/loot_tables/blocks/bubble_coraline_prismarine.json
 b160fa5d3bd52e4672efc7d83d172260fc2a2644 data/prismarine_enhanced/loot_tables/blocks/cut_prismarine.json
+9eb4730afe2f49bcfbddc39aaec477c2aa22de9e data/prismarine_enhanced/loot_tables/blocks/fire_coraline_prismarine.json
+c892cd284205fa5836adeae68b74a7ab523b8e27 data/prismarine_enhanced/loot_tables/blocks/horn_coraline_prismarine.json
 2728aa418c70c446072def5bb9bae0e710e180d5 data/prismarine_enhanced/loot_tables/blocks/prismarine_pillar.json
 bf21c118ccd76de34c07b6d0e428d78c26e26e0e data/prismarine_enhanced/loot_tables/blocks/reinforced_prismarine.json
+f8b218b7cdc8e3b8bfd1082ca3e28f35774fcb4e data/prismarine_enhanced/loot_tables/blocks/tube_coraline_prismarine.json
