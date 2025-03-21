@@ -35,7 +35,7 @@ public class PEBlocks {
     public static final RegistryObject<ConduitFrameBlock> HORN_CORALINE_PRISMARINE = prismarineBlock("horn_coraline_prismarine");
     public static final RegistryObject<ConduitFrameBlock> TUBE_CORALINE_PRISMARINE = prismarineBlock("tube_coraline_prismarine");
 
-    public static final RegistryObject<ConduitFrameBlock> SANGUINE_ENGRAVED_PRISMARINE = prismarineBlock("sanguine_engraved_prismarine");
+    // public static final RegistryObject<ConduitFrameBlock> SANGUINE_ENGRAVED_PRISMARINE = prismarineBlock("sanguine_engraved_prismarine");
 
     private static RegistryObject<ConduitFrameBlock> prismarineBlock(String id) {
         return prismarineBlock(id, ConduitFrameBlock::new);
