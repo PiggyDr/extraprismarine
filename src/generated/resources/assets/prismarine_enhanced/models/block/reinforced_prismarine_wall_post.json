@@ -1,0 +1,8 @@
+{
+  "parent": "prismarine_enhanced:block/template_wall_sbt_post",
+  "textures": {
+    "bottom": "prismarine_enhanced:block/reinforced_prismarine_bottom",
+    "side": "prismarine_enhanced:block/reinforced_prismarine_side",
+    "top": "prismarine_enhanced:block/reinforced_prismarine_top"
+  }
+}

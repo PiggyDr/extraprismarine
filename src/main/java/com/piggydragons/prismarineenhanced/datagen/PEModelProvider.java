@@ -23,6 +23,11 @@ public class PEModelProvider extends BlockModelProvider {
 
         cubeBottomTop("reinforced_prismarine", texLoc("reinforced_prismarine_side"), texLoc("reinforced_prismarine_bottom"), texLoc("reinforced_prismarine_top"));
 
+        sbtWall("reinforced_prismarine_wall_post", "template_wall_sbt_post", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
+        sbtWall("reinforced_prismarine_wall_side", "template_wall_sbt_side", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
+        sbtWall("reinforced_prismarine_wall_side_tall", "template_wall_sbt_side_tall", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
+        sbtWall("reinforced_prismarine_wall", "wall_sbt_inventory", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
+
         cubeColumnConsistentHorizontal("prismarine_pillar", texLoc("prismarine_pillar_side"), texLoc("prismarine_pillar_end"));
         cubeColumnConsistentHorizontal("prismarine_pillar_horizontal", texLoc("prismarine_pillar_side"), texLoc("prismarine_pillar_end"));
 
@@ -49,6 +54,10 @@ public class PEModelProvider extends BlockModelProvider {
 
     private void engravedPrismarine(String engraving) {
         cubeColumn(engraving + "_engraved_prismarine", texLoc(engraving + "_engraved_prismarine"), texLoc("coraline_prismarine_end"));
+    }
+
+    private void sbtWall(String name, String model, String side, String bottom, String top) {
+        withExistingParent(name, texLoc(model)).texture("side", texLoc(side)).texture("bottom", texLoc(bottom)).texture("top", texLoc(top));
     }
 
     public static ResourceLocation texLoc(String path) {

@@ -25,7 +25,7 @@ public class PEBlocks {
     public static final RegistryObject<ConduitFrameBlock.Wall> CUT_PRISMARINE_WALL = prismarineBlock("cut_prismarine_wall", ConduitFrameBlock.Wall::new);
 
     public static final RegistryObject<ConduitFrameBlock> REINFORCED_PRISMARINE = prismarineBlock("reinforced_prismarine");
-//    public static final RegistryObject<ConduitFrameBlock.Wall> REINFORCED_PRISMARINE_WALL = prismarineBlock("reinforced_prismarine_wall", ConduitFrameBlock.Wall::new);
+    public static final RegistryObject<ConduitFrameBlock.Wall> REINFORCED_PRISMARINE_WALL = prismarineBlock("reinforced_prismarine_wall", ConduitFrameBlock.Wall::new);
 
     public static final RegistryObject<ConduitFrameBlock.Pillar> PRISMARINE_PILLAR = prismarineBlock("prismarine_pillar", ConduitFrameBlock.Pillar::new);
 
