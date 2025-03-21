@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "prismarine_enhanced:block/cut_prismarine"
+  }
+}

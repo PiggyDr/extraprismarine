@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "prismarine_enhanced:block/cut_prismarine"
+  }
+}

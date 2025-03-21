@@ -15,7 +15,7 @@ import org.slf4j.Logger;
 public class PrismarineEnhanced {
 
     public static final String MOD_ID = "prismarine_enhanced";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public PrismarineEnhanced(FMLJavaModLoadingContext context) {
         IEventBus bus = context.getModEventBus();

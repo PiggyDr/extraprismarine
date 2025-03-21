@@ -19,7 +19,7 @@ public class PELootTableSubProvider extends BlockLootSubProvider {
     protected void generate() {
         for(RegistryObject<Block> regBlock : PEBlocks.BLOCKS.getEntries()) {
             Block block = regBlock.get();
-            if (block instanceof SlabBlock) this.createSlabItemTable(block);
+            if (block instanceof SlabBlock) this.add(block, this.createSlabItemTable(block));
             else this.dropSelf(block);
         }
     }
