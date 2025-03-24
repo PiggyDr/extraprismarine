@@ -37,6 +37,11 @@ public class PEModelProvider extends BlockModelProvider {
         coralinePrismarine("horn");
         coralinePrismarine("tube");
 
+        copperPrismarine("");
+        copperPrismarine("exposed_");
+        copperPrismarine("weathered_");
+        copperPrismarine("oxidized_");
+
         engravedPrismarine("sanguine");
     }
 
@@ -54,6 +59,11 @@ public class PEModelProvider extends BlockModelProvider {
 
     private void engravedPrismarine(String engraving) {
         cubeColumn(engraving + "_engraved_prismarine", texLoc(engraving + "_engraved_prismarine"), texLoc("coraline_prismarine_end"));
+    }
+
+    private void copperPrismarine(String weatherState) {
+        cubeColumn(weatherState + "copper_gilded_dark_prismarine", texLoc(weatherState + "copper_gilded_dark_prismarine"), texLoc("reinforced_prismarine_bottom"));
+        cubeColumn( "waxed_" + weatherState + "copper_gilded_dark_prismarine", texLoc(weatherState + "copper_gilded_dark_prismarine"), texLoc("reinforced_prismarine_bottom"));
     }
 
     private void sbtWall(String name, String model, String side, String bottom, String top) {
