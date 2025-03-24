@@ -2,7 +2,9 @@ package com.piggydragons.prismarineenhanced.registries;
 
 import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
 import com.piggydragons.prismarineenhanced.blocks.ConduitFrameBlock;
-import com.piggydragons.prismarineenhanced.blocks.WeatheringPrismarineBlock;
+import com.piggydragons.prismarineenhanced.blocks.ConduitFrameBlock.Weathering;
+import com.piggydragons.prismarineenhanced.blocks.PEWaxedWeatheringCopper;
+import com.piggydragons.prismarineenhanced.blocks.PEWeatheringCopper;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -10,10 +12,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import javax.annotation.Nullable;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -41,7 +45,8 @@ public class PEBlocks {
 
     // public static final RegistryObject<ConduitFrameBlock> SANGUINE_ENGRAVED_PRISMARINE = prismarineBlock("sanguine_engraved_prismarine");
 
-    public static final WeatheringGroup COPPER_GILDED_DARK_PRISMARINE = new WeatheringGroup("copper_gilded_dark_prismarine", PRISMARINE_PROP);
+    public static final WeatheringGroup<ConduitFrameBlock.Weathering, ConduitFrameBlock.Waxed> COPPER_GILDED_DARK_PRISMARINE =
+            new WeatheringGroup<>("copper_gilded_dark_prismarine", PRISMARINE_PROP, Weathering::new, ConduitFrameBlock.Waxed::new);
 
     private static RegistryObject<ConduitFrameBlock> prismarineBlock(String id) {
         return prismarineBlock(id, ConduitFrameBlock::new);
@@ -61,35 +66,58 @@ public class PEBlocks {
         return block;
     }
 
-    public static class WeatheringGroup {
+    public static class WeatheringGroup<T extends Block, W extends Block> {
 
         // i should probably be using optionals here but since the point of these is just to get a nice stable reference object i think it is fine
-        private Holder<RegistryObject<WeatheringPrismarineBlock>> clean = Holder.direct(null);
-        private Holder<RegistryObject<WeatheringPrismarineBlock>> exposed = Holder.direct(null);
-        private Holder<RegistryObject<WeatheringPrismarineBlock>> weathered = Holder.direct(null);
-        private Holder<RegistryObject<WeatheringPrismarineBlock>> oxidized = Holder.direct(null);
+        private Holder<RegistryObject<T>> clean = Holder.direct(null);
+        private Holder<RegistryObject<T>> exposed = Holder.direct(null);
+        private Holder<RegistryObject<T>> weathered = Holder.direct(null);
+        private Holder<RegistryObject<T>> oxidized = Holder.direct(null);
 
-        private final Map<WeatherState, Holder<RegistryObject<WeatheringPrismarineBlock>>> blockByState = Map.of(
+        private Holder<RegistryObject<W>> cleanWaxed = Holder.direct(null);
+        private Holder<RegistryObject<W>> exposedWaxed = Holder.direct(null);
+        private Holder<RegistryObject<W>> weatheredWaxed = Holder.direct(null);
+        private Holder<RegistryObject<W>> oxidizedWaxed = Holder.direct(null);
+
+        private final Map<WeatherState, Holder<RegistryObject<T>>> blockByState = Map.of(
                 WeatherState.UNAFFECTED, clean,
                 WeatherState.EXPOSED, exposed,
                 WeatherState.WEATHERED, weathered,
                 WeatherState.OXIDIZED, oxidized
         );
 
-        public WeatheringGroup(String id, BlockBehaviour.Properties p) {
-            clean = Holder.direct(blockItem(id, () -> new WeatheringPrismarineBlock(WeatherState.UNAFFECTED, null, exposed.get()::get, p)));
-            exposed = Holder.direct(blockItem("exposed_" + id, () -> new WeatheringPrismarineBlock(WeatherState.EXPOSED, clean.get()::get, weathered.get()::get, p)));
-            weathered = Holder.direct(blockItem("weathered_" + id, () -> new WeatheringPrismarineBlock(WeatherState.WEATHERED, exposed.get()::get, oxidized.get()::get, p)));
-            oxidized = Holder.direct(blockItem("oxidized_" + id, () -> new WeatheringPrismarineBlock(WeatherState.OXIDIZED, weathered.get()::get, null, p)));
+        // TODO waxed getters
+
+        public WeatheringGroup(String id, BlockBehaviour.Properties p, WeatheringBlockConstructor<T> constructor, WaxedWeatheringBlockConstructor<W> waxedConstructor) {
+
+            // most of the blocks referenced in these constructors have not been registered yet so we have to use holders and suppliers and stuff
+            clean = Holder.direct(blockItem(id, () -> constructor.create(WeatherState.UNAFFECTED, null, exposed.get()::get, cleanWaxed.get(), p)));
+            exposed = Holder.direct(blockItem("exposed_" + id, () -> constructor.create(WeatherState.EXPOSED, clean.get()::get, weathered.get()::get, exposedWaxed.get(), p)));
+            weathered = Holder.direct(blockItem("weathered_" + id, () -> constructor.create(WeatherState.WEATHERED, exposed.get()::get, oxidized.get()::get, weatheredWaxed.get(), p)));
+            oxidized = Holder.direct(blockItem("oxidized_" + id, () -> constructor.create(WeatherState.OXIDIZED, weathered.get()::get, null, oxidizedWaxed.get(), p)));
+
+            // unwaxed variants have already been registered at this point so there is no need for suppliers
+            cleanWaxed = Holder.direct(blockItem("waxed_" + id, () -> waxedConstructor.create(clean.get().get(), p)));
+            exposedWaxed = Holder.direct(blockItem("waxed_exposed_" + id, () -> waxedConstructor.create(exposed.get().get(), p)));
+            weatheredWaxed = Holder.direct(blockItem("waxed_weathered_" + id, () -> waxedConstructor.create(weathered.get().get(), p)));
+            oxidizedWaxed = Holder.direct(blockItem("waxed_oxidized_" + id, () -> waxedConstructor.create(oxidized.get().get(), p)));
         }
 
-        public WeatheringPrismarineBlock getBlock(WeatherState weatherState) {
+        public T getBlock(WeatherState weatherState) {
             return blockByState.get(weatherState).get().get();
         }
 
-        public WeatheringPrismarineBlock getClean() { return clean.get().get(); }
-        public WeatheringPrismarineBlock getExposed() { return exposed.get().get(); }
-        public WeatheringPrismarineBlock getWeathered() { return weathered.get().get(); }
-        public WeatheringPrismarineBlock getOxidized() { return oxidized.get().get(); }
+        public T getClean() { return clean.get().get(); }
+        public T getExposed() { return exposed.get().get(); }
+        public T getWeathered() { return weathered.get().get(); }
+        public T getOxidized() { return oxidized.get().get(); }
+    }
+
+    public interface WeatheringBlockConstructor<T extends Block> {
+        T create(WeatherState weatherState, @Nullable NonNullSupplier<Block> previous, @Nullable NonNullSupplier<Block> next, Supplier<? extends Block> waxed, BlockBehaviour.Properties p);
+    }
+
+    public interface WaxedWeatheringBlockConstructor<T extends Block> {
+        T create(Block unwaxed, BlockBehaviour.Properties p);
     }
 }
