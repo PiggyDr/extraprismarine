@@ -23,4 +23,8 @@ public class ConduitFrameBlock extends Block implements IConduitFrameBlock {
     public static class Wall extends WallBlock implements IConduitFrameBlock {
         public Wall(Properties p) { super(p); }
     }
+
+    public static class Weathering extends WeatheringCopperFullBlock {
+        public Weathering(WeatherState weatherState, Properties p) { super(weatherState, p); }
+    }
 }
