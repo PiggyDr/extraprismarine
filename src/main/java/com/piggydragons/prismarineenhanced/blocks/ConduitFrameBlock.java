@@ -17,6 +17,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
@@ -53,7 +54,11 @@ public class ConduitFrameBlock extends Block implements IConduitFrameBlock {
         public Wall(Properties p) { super(p); }
     }
 
-    public static class Weathering extends Block implements PEWeatheringCopper {
+    public static class Trapdoor extends TrapDoorBlock implements IConduitFrameBlock {
+        public Trapdoor(Properties p, BlockSetType blockSetType) { super(p, blockSetType); }
+    }
+
+    public static class Weathering extends Block implements PEWeatheringCopper, IConduitFrameBlock {
         private final WeatherState weatherState;
 
         private final LazyOptional<Block> previous;
@@ -124,7 +129,7 @@ public class ConduitFrameBlock extends Block implements IConduitFrameBlock {
         }
     }
 
-    public static class Waxed extends Block implements PEWaxedWeatheringCopper {
+    public static class Waxed extends Block implements PEWaxedWeatheringCopper, IConduitFrameBlock {
 
         private final Block unwaxed;
 

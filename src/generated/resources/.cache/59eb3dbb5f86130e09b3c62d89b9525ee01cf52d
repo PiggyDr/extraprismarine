@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-24T11:35:52.4064585	Loot Tables
+// 1.20.1	2025-03-24T12:39:46.8706766	Loot Tables
 8d2ebba5ca16532715eb137684268dab234568d2 data/prismarine_enhanced/loot_tables/blocks/brain_coraline_prismarine.json
 752075a9eac139d650a82df0c0c622a5d4db7d9b data/prismarine_enhanced/loot_tables/blocks/bubble_coraline_prismarine.json
 357e9b75fe23e3fc14b55805137094b97a8ca184 data/prismarine_enhanced/loot_tables/blocks/copper_gilded_dark_prismarine.json
@@ -12,6 +12,7 @@ e3d611116232a394067b2143f74e2357ae893ac0 data/prismarine_enhanced/loot_tables/bl
 c892cd284205fa5836adeae68b74a7ab523b8e27 data/prismarine_enhanced/loot_tables/blocks/horn_coraline_prismarine.json
 f539bbf94f9ec8240b155ab00a9e3923f614f0fa data/prismarine_enhanced/loot_tables/blocks/oxidized_copper_gilded_dark_prismarine.json
 2728aa418c70c446072def5bb9bae0e710e180d5 data/prismarine_enhanced/loot_tables/blocks/prismarine_pillar.json
+598f2a6d11c0dd12da3722c01766ba0a90ac7c27 data/prismarine_enhanced/loot_tables/blocks/prismarine_trapdoor.json
 bf21c118ccd76de34c07b6d0e428d78c26e26e0e data/prismarine_enhanced/loot_tables/blocks/reinforced_prismarine.json
 896f07ad75c5ca2e0c67fc7724ee082b80c4edd1 data/prismarine_enhanced/loot_tables/blocks/reinforced_prismarine_wall.json
 f8b218b7cdc8e3b8bfd1082ca3e28f35774fcb4e data/prismarine_enhanced/loot_tables/blocks/tube_coraline_prismarine.json

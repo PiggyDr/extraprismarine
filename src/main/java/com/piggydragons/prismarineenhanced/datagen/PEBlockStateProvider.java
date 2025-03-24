@@ -28,6 +28,7 @@ public class PEBlockStateProvider extends BlockStateProvider {
             else if (block instanceof SlabBlock sBlock) slabBlock(sBlock, baseBlockTexture(blockId, 5), baseBlockTexture(blockId, 5));
             else if (block instanceof StairBlock sBlock) stairsBlock(sBlock, ForgeRegistries.BLOCKS.getKey(sBlock.stateSupplier.get().getBlock()).withPrefix("block/"));
             else if (block instanceof WallBlock wBlock) wallBlock(wBlock, model(blockId.withSuffix("_post")), model(blockId.withSuffix("_side")), model(blockId.withSuffix("_side_tall")));
+            else if (block instanceof TrapDoorBlock tBlock) trapdoorBlockWithRenderType(tBlock, blockId.withPrefix("block/"), true, "cutout_mipped");
             else simpleBlock(block, models().getExistingFile(regBlock.getId()));
 
             simpleBlockItem(block, models().getExistingFile(regBlock.getId()));

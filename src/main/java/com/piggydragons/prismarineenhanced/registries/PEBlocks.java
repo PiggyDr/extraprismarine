@@ -6,12 +6,15 @@ import com.piggydragons.prismarineenhanced.blocks.ConduitFrameBlock.Weathering;
 import com.piggydragons.prismarineenhanced.blocks.PEWaxedWeatheringCopper;
 import com.piggydragons.prismarineenhanced.blocks.PEWeatheringCopper;
 import net.minecraft.core.Holder;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.common.util.NonNullSupplier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -48,6 +51,21 @@ public class PEBlocks {
     public static final RegistryObject<ConduitFrameBlock> GILDED_DARK_PRISMARINE = prismarineBlock("gilded_dark_prismarine");
     public static final WeatheringGroup<ConduitFrameBlock.Weathering, ConduitFrameBlock.Waxed> COPPER_GILDED_DARK_PRISMARINE =
             new WeatheringGroup<>("copper_gilded_dark_prismarine", PRISMARINE_PROP, Weathering::new, ConduitFrameBlock.Waxed::new);
+
+    public static final BlockSetType PRISMARINE_BLOCK_SET = BlockSetType.register(new BlockSetType(
+            "prismarine", true, SoundType.METAL,
+            SoundEvents.IRON_DOOR_CLOSE, SoundEvents.IRON_DOOR_OPEN,
+            SoundEvents.IRON_TRAPDOOR_CLOSE, SoundEvents.IRON_TRAPDOOR_OPEN,
+            SoundEvents.METAL_PRESSURE_PLATE_CLICK_OFF, SoundEvents.METAL_PRESSURE_PLATE_CLICK_ON,
+            SoundEvents.STONE_BUTTON_CLICK_OFF, SoundEvents.STONE_BUTTON_CLICK_ON
+    ));
+
+    public static final RegistryObject<ConduitFrameBlock.Trapdoor> PRISMARINE_TRAPDOOR =
+            prismarineBlock("prismarine_trapdoor", p -> new ConduitFrameBlock.Trapdoor(p.noOcclusion(), PRISMARINE_BLOCK_SET));
+
+
+
+    // methods
 
     private static RegistryObject<ConduitFrameBlock> prismarineBlock(String id) {
         return prismarineBlock(id, ConduitFrameBlock::new);

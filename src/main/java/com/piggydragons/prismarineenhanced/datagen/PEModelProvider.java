@@ -43,6 +43,10 @@ public class PEModelProvider extends BlockModelProvider {
         copperPrismarine("weathered_");
         copperPrismarine("oxidized_");
 
+        trapdoorBottom("prismarine_trapdoor", texLoc("prismarine_trapdoor"));
+        trapdoorTop("prismarine_trapdoor_top", texLoc("prismarine_trapdoor"));
+        trapdoorOpen("prismarine_trapdoor_open", texLoc("prismarine_trapdoor"));
+
         engravedPrismarine("sanguine");
     }
 
