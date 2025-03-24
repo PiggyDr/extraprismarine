@@ -1,4 +1,4 @@
-// 1.20.1	2025-03-23T23:33:04.2034165	Block Models: prismarine_enhanced
+// 1.20.1	2025-03-24T11:35:52.4087846	Block Models: prismarine_enhanced
 b785c88b56c97f40a3528dbee872e40b60266a62 assets/prismarine_enhanced/models/block/brain_coraline_prismarine.json
 cde51e9aa82451af0fcac575612b244b6bb11877 assets/prismarine_enhanced/models/block/bubble_coraline_prismarine.json
 7feca8a34fe0b70ae90c7af997ab556d00381d6e assets/prismarine_enhanced/models/block/copper_gilded_dark_prismarine.json
@@ -9,6 +9,7 @@ b478676f5b5d285c0e1b68523f79dab212663a72 assets/prismarine_enhanced/models/block
 deeb28f477ffbab7a1b68ae8ecd0159ebd4f93b0 assets/prismarine_enhanced/models/block/cut_prismarine_wall_side_tall.json
 d8738cad115cd6a168de4389dd73ca9e2044306b assets/prismarine_enhanced/models/block/exposed_copper_gilded_dark_prismarine.json
 a804bbfe709f5303e4f22208b81b48a8a93f8d69 assets/prismarine_enhanced/models/block/fire_coraline_prismarine.json
+42b28d06e4a580ef5fbd44c3f01e9207db6d5b58 assets/prismarine_enhanced/models/block/gilded_dark_prismarine.json
 2604ce621fea10393c26204fe426e51c867b95cc assets/prismarine_enhanced/models/block/horn_coraline_prismarine.json
 89268e8d26d446f0b5fe8558f95f4aadf8759bc3 assets/prismarine_enhanced/models/block/oxidized_copper_gilded_dark_prismarine.json
 1fb4e711ca599d57df2cb4f17972f57aeb57e426 assets/prismarine_enhanced/models/block/prismarine_pillar.json

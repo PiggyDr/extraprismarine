@@ -45,6 +45,7 @@ public class PEBlocks {
 
     // public static final RegistryObject<ConduitFrameBlock> SANGUINE_ENGRAVED_PRISMARINE = prismarineBlock("sanguine_engraved_prismarine");
 
+    public static final RegistryObject<ConduitFrameBlock> GILDED_DARK_PRISMARINE = prismarineBlock("gilded_dark_prismarine");
     public static final WeatheringGroup<ConduitFrameBlock.Weathering, ConduitFrameBlock.Waxed> COPPER_GILDED_DARK_PRISMARINE =
             new WeatheringGroup<>("copper_gilded_dark_prismarine", PRISMARINE_PROP, Weathering::new, ConduitFrameBlock.Waxed::new);
 

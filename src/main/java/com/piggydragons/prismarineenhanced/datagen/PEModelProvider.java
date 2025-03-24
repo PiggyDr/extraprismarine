@@ -37,6 +37,7 @@ public class PEModelProvider extends BlockModelProvider {
         coralinePrismarine("horn");
         coralinePrismarine("tube");
 
+        cubeColumn("gilded_dark_prismarine", texLoc("gilded_dark_prismarine"), texLoc("reinforced_prismarine_bottom"));
         copperPrismarine("");
         copperPrismarine("exposed_");
         copperPrismarine("weathered_");

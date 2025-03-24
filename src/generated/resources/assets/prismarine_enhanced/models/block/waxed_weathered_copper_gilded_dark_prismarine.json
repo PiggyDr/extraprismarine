@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "prismarine_enhanced:block/reinforced_prismarine_bottom",
+    "side": "prismarine_enhanced:block/weathered_copper_gilded_dark_prismarine"
+  }
+}
