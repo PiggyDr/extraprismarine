@@ -87,7 +87,12 @@ public class PEBlocks {
                 WeatherState.OXIDIZED, oxidized
         );
 
-        // TODO waxed getters
+        private final Map<WeatherState, Holder<RegistryObject<W>>> waxedByState = Map.of(
+                WeatherState.UNAFFECTED, cleanWaxed,
+                WeatherState.EXPOSED, exposedWaxed,
+                WeatherState.WEATHERED, weatheredWaxed,
+                WeatherState.OXIDIZED, oxidizedWaxed
+        );
 
         public WeatheringGroup(String id, BlockBehaviour.Properties p, WeatheringBlockConstructor<T> constructor, WaxedWeatheringBlockConstructor<W> waxedConstructor) {
 
@@ -104,7 +109,7 @@ public class PEBlocks {
             oxidizedWaxed = Holder.direct(blockItem("waxed_oxidized_" + id, () -> waxedConstructor.create(oxidized.get().get(), p)));
         }
 
-        public T getBlock(WeatherState weatherState) {
+        public T getUnwaxedBlock(WeatherState weatherState) {
             return blockByState.get(weatherState).get().get();
         }
 
@@ -112,6 +117,15 @@ public class PEBlocks {
         public T getExposed() { return exposed.get().get(); }
         public T getWeathered() { return weathered.get().get(); }
         public T getOxidized() { return oxidized.get().get(); }
+
+        public W getWaxedBlock(WeatherState weatherState) {
+            return waxedByState.get(weatherState).get().get();
+        }
+
+        public W getWaxedClean() { return cleanWaxed.get().get(); }
+        public W getWaxedExposed() { return exposedWaxed.get().get(); }
+        public W getWaxedWeathered() { return weatheredWaxed.get().get(); }
+        public W getWaxedOxidized() { return oxidizedWaxed.get().get(); }
     }
 
     public interface WeatheringBlockConstructor<T extends Block> {

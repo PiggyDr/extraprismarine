@@ -3,8 +3,10 @@ package com.piggydragons.prismarineenhanced.blocks;
 import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -16,6 +18,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.ToolActions;
@@ -23,6 +27,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.util.NonNullSupplier;
 
 import javax.annotation.Nullable;
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -104,6 +109,13 @@ public class ConduitFrameBlock extends Block implements IConduitFrameBlock {
         @Override
         public void randomTick(BlockState blockState, ServerLevel level, BlockPos pos, RandomSource random) {
             onRandomTick(blockState, level, pos, random);
+            if (isSubmerged(level, pos))
+                onRandomTick(blockState, level, pos, random); // oxidize faster underwater
+        }
+
+        private boolean isSubmerged(ServerLevel level, BlockPos pos) {
+            return Arrays.stream(Direction.values())
+                    .anyMatch(dir -> level.getBlockState(pos.relative(dir)).getFluidState().is(FluidTags.WATER));
         }
 
         @Override
