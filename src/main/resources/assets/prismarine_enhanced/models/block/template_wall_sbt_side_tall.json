@@ -1,6 +1,6 @@
 {
     "textures": {
-        "particle": "#wall"
+        "particle": "#side"
     },
     "elements": [
         {   "from": [ 5, 0, 0 ],
