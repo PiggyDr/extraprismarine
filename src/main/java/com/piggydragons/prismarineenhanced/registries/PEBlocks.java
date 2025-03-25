@@ -3,6 +3,7 @@ package com.piggydragons.prismarineenhanced.registries;
 import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
 import com.piggydragons.prismarineenhanced.blocks.ConduitFrameBlock;
 import com.piggydragons.prismarineenhanced.blocks.ConduitFrameBlock.Weathering;
+import com.piggydragons.prismarineenhanced.blocks.CopperLatticeBlock;
 import com.piggydragons.prismarineenhanced.blocks.PEWaxedWeatheringCopper;
 import com.piggydragons.prismarineenhanced.blocks.PEWeatheringCopper;
 import net.minecraft.core.Holder;
@@ -21,9 +22,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nullable;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class PEBlocks {
 
@@ -51,6 +54,10 @@ public class PEBlocks {
     public static final RegistryObject<ConduitFrameBlock> GILDED_DARK_PRISMARINE = prismarineBlock("gilded_dark_prismarine");
     public static final WeatheringGroup<ConduitFrameBlock.Weathering, ConduitFrameBlock.Waxed> COPPER_GILDED_DARK_PRISMARINE =
             new WeatheringGroup<>("copper_gilded_dark_prismarine", PRISMARINE_PROP, Weathering::new, ConduitFrameBlock.Waxed::new);
+
+    public static final WeatheringGroup<CopperLatticeBlock, CopperLatticeBlock.Waxed> COPPER_LATTICES =
+            new WeatheringGroup<>("copper_lattice", BlockBehaviour.Properties.copy(Blocks.IRON_BARS).sound(SoundType.CHAIN).noOcclusion(),
+                    CopperLatticeBlock::new, CopperLatticeBlock.Waxed::new);
 
     public static final BlockSetType PRISMARINE_BLOCK_SET = BlockSetType.register(new BlockSetType(
             "prismarine", true, SoundType.METAL,

@@ -1,6 +1,7 @@
 package com.piggydragons.prismarineenhanced.datagen;
 
 import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
+import com.piggydragons.prismarineenhanced.registries.PEBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
@@ -47,6 +48,12 @@ public class PEModelProvider extends BlockModelProvider {
         trapdoorTop("prismarine_trapdoor_top", texLoc("prismarine_trapdoor"));
         trapdoorOpen("prismarine_trapdoor_open", texLoc("prismarine_trapdoor"));
 
+        // item models so i dont have to change the blockstate code
+        itemLattice("copper_lattice");
+        itemLattice("exposed_copper_lattice");
+        itemLattice("weathered_copper_lattice");
+        itemLattice("oxidized_copper_lattice");
+
         engravedPrismarine("sanguine");
     }
 
@@ -68,7 +75,12 @@ public class PEModelProvider extends BlockModelProvider {
 
     private void copperPrismarine(String weatherState) {
         cubeColumn(weatherState + "copper_gilded_dark_prismarine", texLoc(weatherState + "copper_gilded_dark_prismarine"), texLoc("reinforced_prismarine_bottom"));
-        cubeColumn( "waxed_" + weatherState + "copper_gilded_dark_prismarine", texLoc(weatherState + "copper_gilded_dark_prismarine"), texLoc("reinforced_prismarine_bottom"));
+        cubeColumn("waxed_" + weatherState + "copper_gilded_dark_prismarine", texLoc(weatherState + "copper_gilded_dark_prismarine"), texLoc("reinforced_prismarine_bottom"));
+    }
+
+    private void itemLattice(String id) {
+        withExistingParent(id, "item/generated").texture("layer0", texLoc(id));
+        withExistingParent("waxed_" + id, "item/generated").texture("layer0", texLoc(id));
     }
 
     private void sbtWall(String name, String model, String side, String bottom, String top) {

@@ -22,12 +22,12 @@ public interface PEWeatheringCopper extends WeatheringCopper, IForgeBlock {
         return getNextRaw().resolve().map(Block::defaultBlockState);
     }
 
-    default Optional<BlockState> getPrevious() {
+    default Optional<BlockState> getPrevious(BlockState current) {
         return getPreviousRaw().resolve().map(Block::defaultBlockState);
     }
 
     @Override
     default @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-        return toolAction == ToolActions.AXE_SCRAPE ? this.getPrevious().orElse(null) : IForgeBlock.super.getToolModifiedState(state, context, toolAction, simulate);
+        return toolAction == ToolActions.AXE_SCRAPE ? this.getPrevious(state).orElse(null) : IForgeBlock.super.getToolModifiedState(state, context, toolAction, simulate);
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "prismarine_enhanced:waxed_oxidized_copper_lattice"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "prismarine_enhanced:blocks/waxed_oxidized_copper_lattice"
+}

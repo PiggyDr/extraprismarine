@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/template_glass_pane_post",
+  "render_type": "minecraft:cutout_mipped",
+  "textures": {
+    "edge": "prismarine_enhanced:block/exposed_copper_lattice_side",
+    "pane": "prismarine_enhanced:block/exposed_copper_lattice"
+  }
+}

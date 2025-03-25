@@ -69,7 +69,6 @@ public class ConduitFrameBlock extends Block implements IConduitFrameBlock {
             super(p);
             this.previous = previous == null ? LazyOptional.empty() : LazyOptional.of(previous);
             this.next = next == null ? LazyOptional.empty() : LazyOptional.of(next);
-            PrismarineEnhanced.LOGGER.debug("previous: {} next: {}", previous, next);
             this.waxed = waxed;
             this.weatherState = weatherState;
         }
@@ -139,8 +138,8 @@ public class ConduitFrameBlock extends Block implements IConduitFrameBlock {
         }
 
         @Override
-        public Block getUnwaxed() {
-            return unwaxed;
+        public BlockState getUnwaxed(BlockState waxed) {
+            return unwaxed.defaultBlockState();
         }
     }
 }
