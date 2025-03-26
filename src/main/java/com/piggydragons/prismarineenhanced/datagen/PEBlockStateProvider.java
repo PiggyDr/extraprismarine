@@ -11,8 +11,6 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import static com.piggydragons.prismarineenhanced.datagen.PEModelProvider.texLoc;
-
 public class PEBlockStateProvider extends BlockStateProvider {
 
     public PEBlockStateProvider(PackOutput output, ExistingFileHelper efh) {

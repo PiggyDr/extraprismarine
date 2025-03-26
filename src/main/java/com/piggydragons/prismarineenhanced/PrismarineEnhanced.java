@@ -1,9 +1,9 @@
 package com.piggydragons.prismarineenhanced;
 
 import com.mojang.logging.LogUtils;
+import com.piggydragons.prismarineenhanced.datagen.PEDatagen;
 import com.piggydragons.prismarineenhanced.registries.PEBlocks;
 import com.piggydragons.prismarineenhanced.registries.PEItems;
-import com.piggydragons.prismarineenhanced.datagen.PEDatagen;
 import com.piggydragons.prismarineenhanced.registries.PETab;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;

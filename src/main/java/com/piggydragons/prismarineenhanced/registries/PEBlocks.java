@@ -4,8 +4,6 @@ import com.piggydragons.prismarineenhanced.PrismarineEnhanced;
 import com.piggydragons.prismarineenhanced.blocks.ConduitFrameBlock;
 import com.piggydragons.prismarineenhanced.blocks.ConduitFrameBlock.Weathering;
 import com.piggydragons.prismarineenhanced.blocks.CopperLatticeBlock;
-import com.piggydragons.prismarineenhanced.blocks.PEWaxedWeatheringCopper;
-import com.piggydragons.prismarineenhanced.blocks.PEWeatheringCopper;
 import net.minecraft.core.Holder;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
@@ -22,12 +20,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nullable;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 public class PEBlocks {
 
