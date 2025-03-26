@@ -61,7 +61,7 @@ public class PERecipeProvider extends RecipeProvider {
                 .save(recipes);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, PEBlocks.PRISMARINE_TRAPDOOR.get(), 4)
-                .define('#', Items.PRISMARINE_SHARD)
+                .define('#', Blocks.PRISMARINE_BRICKS)
                 .pattern("###").pattern("###")
                 .unlockedBy(getHasName(Items.PRISMARINE), has(Items.PRISMARINE))
                 .save(recipes);
