@@ -57,7 +57,8 @@ public class PEBlocks {
             new WeatheringGroup<>("copper_gilded_dark_prismarine", PRISMARINE_PROP, Weathering::new, ConduitFrameBlock.Waxed::new);
 
     public static final WeatheringGroup<CopperLatticeBlock, CopperLatticeBlock.Waxed> COPPER_LATTICES =
-            new WeatheringGroup<>("copper_lattice", BlockBehaviour.Properties.copy(Blocks.IRON_BARS).sound(SoundType.CHAIN).noOcclusion(),
+            new WeatheringGroup<>("copper_lattice", BlockBehaviour.Properties.of()
+                    .strength(0.9F).sound(SoundType.CHAIN).requiresCorrectToolForDrops().noOcclusion(),
                     CopperLatticeBlock::new, CopperLatticeBlock.Waxed::new);
 
     public static final BlockSetType PRISMARINE_BLOCK_SET = BlockSetType.register(new BlockSetType(
