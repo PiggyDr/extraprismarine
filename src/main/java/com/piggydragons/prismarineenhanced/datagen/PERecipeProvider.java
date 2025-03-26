@@ -24,13 +24,13 @@ public class PERecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> recipes) {
-        stonecutterRecipe(Blocks.PRISMARINE, PEBlocks.CUT_PRISMARINE.get(), 1, recipes);
+        stonecutterRecipe(Blocks.PRISMARINE_BRICKS, PEBlocks.CUT_PRISMARINE.get(), 1, recipes);
         stonecutterRecipe(PEBlocks.CUT_PRISMARINE.get(), PEBlocks.CUT_PRISMARINE_STAIRS.get(), 1, recipes);
         stonecutterRecipe(PEBlocks.CUT_PRISMARINE.get(), PEBlocks.CUT_PRISMARINE_SLAB.get(), 2, recipes);
         stonecutterRecipe(PEBlocks.CUT_PRISMARINE.get(), PEBlocks.CUT_PRISMARINE_WALL.get(), 1, recipes);
-        stonecutterRecipe(Blocks.PRISMARINE, PEBlocks.CUT_PRISMARINE_STAIRS.get(), 1, recipes);
-        stonecutterRecipe(Blocks.PRISMARINE, PEBlocks.CUT_PRISMARINE_SLAB.get(), 2, recipes);
-        stonecutterRecipe(Blocks.PRISMARINE, PEBlocks.CUT_PRISMARINE_WALL.get(), 1, recipes);
+        stonecutterRecipe(Blocks.PRISMARINE_BRICKS, PEBlocks.CUT_PRISMARINE_STAIRS.get(), 1, recipes);
+        stonecutterRecipe(Blocks.PRISMARINE_BRICKS, PEBlocks.CUT_PRISMARINE_SLAB.get(), 2, recipes);
+        stonecutterRecipe(Blocks.PRISMARINE_BRICKS, PEBlocks.CUT_PRISMARINE_WALL.get(), 1, recipes);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, PEBlocks.REINFORCED_PRISMARINE.get())
                         .define('T', Blocks.PRISMARINE_BRICKS).define('D', Blocks.DARK_PRISMARINE)
@@ -61,7 +61,7 @@ public class PERecipeProvider extends RecipeProvider {
                 .save(recipes);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, PEBlocks.PRISMARINE_TRAPDOOR.get(), 4)
-                .define('#', Blocks.PRISMARINE)
+                .define('#', Items.PRISMARINE_SHARD)
                 .pattern("###").pattern("###")
                 .unlockedBy(getHasName(Items.PRISMARINE), has(Items.PRISMARINE))
                 .save(recipes);
