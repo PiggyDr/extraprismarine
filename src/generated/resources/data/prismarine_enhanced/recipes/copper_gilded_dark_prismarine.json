@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "I": {
+      "item": "minecraft:copper_ingot"
+    },
+    "P": {
+      "item": "minecraft:dark_prismarine_slab"
+    }
+  },
+  "pattern": [
+    "P",
+    "I",
+    "P"
+  ],
+  "result": {
+    "item": "prismarine_enhanced:copper_gilded_dark_prismarine"
+  },
+  "show_notification": true
+}

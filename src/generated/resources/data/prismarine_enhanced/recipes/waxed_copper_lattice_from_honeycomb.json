@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "building",
+  "group": "copper_lattice_waxing",
   "ingredients": [
     {
       "item": "prismarine_enhanced:copper_lattice"

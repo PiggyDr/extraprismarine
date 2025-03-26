@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "coraline_prismarine",
+  "key": {
+    "C": {
+      "item": "minecraft:fire_coral_fan"
+    },
+    "P": {
+      "item": "minecraft:prismarine_bricks"
+    },
+    "S": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    " P ",
+    "SCS",
+    " P "
+  ],
+  "result": {
+    "item": "prismarine_enhanced:fire_coraline_prismarine"
+  },
+  "show_notification": true
+}

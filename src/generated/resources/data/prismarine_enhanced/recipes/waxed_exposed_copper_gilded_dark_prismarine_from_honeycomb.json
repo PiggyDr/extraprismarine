@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "building",
+  "group": "copper_gilded_dark_prismarine_waxing",
   "ingredients": [
     {
       "item": "prismarine_enhanced:exposed_copper_gilded_dark_prismarine"

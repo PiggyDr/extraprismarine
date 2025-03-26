@@ -23,7 +23,8 @@ public class PEDatagen {
         generator.addProvider(event.includeClient(), new PELangProvider(packOutput));
 
         // server
-        generator.addProvider(event.includeServer(), new PETagProvider(packOutput, event.getLookupProvider()));
+        generator.addProvider(event.includeServer(), new PEBlockTags(packOutput, event.getLookupProvider(), efh));
+        generator.addProvider(event.includeServer(), new PEItemTags(packOutput, event.getLookupProvider(), efh));
         generator.addProvider(event.includeServer(), new PERecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), new LootTableProvider(
                 packOutput,

@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_coral_fan": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "prismarine_enhanced:coral_fans"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_prismarine_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:prismarine_bricks"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prismarine_enhanced:bubble_coraline_prismarine"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_coral_fan",
+      "has_prismarine_bricks",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prismarine_enhanced:bubble_coraline_prismarine"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "coraline_prismarine",
+  "key": {
+    "C": {
+      "item": "minecraft:bubble_coral_fan"
+    },
+    "P": {
+      "item": "minecraft:prismarine_bricks"
+    },
+    "S": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    " P ",
+    "SCS",
+    " P "
+  ],
+  "result": {
+    "item": "prismarine_enhanced:bubble_coraline_prismarine"
+  },
+  "show_notification": true
+}

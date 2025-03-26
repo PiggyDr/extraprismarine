@@ -1,11 +1,95 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
+    "has_copper_gilded_dark_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:copper_gilded_dark_prismarine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_exposed_copper_gilded_dark_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:exposed_copper_gilded_dark_prismarine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_oxidized_copper_gilded_dark_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:oxidized_copper_gilded_dark_prismarine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "prismarine_enhanced:waxed_weathered_copper_gilded_dark_prismarine_from_honeycomb"
       },
       "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_waxed_copper_gilded_dark_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:copper_gilded_dark_prismarine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_waxed_exposed_copper_gilded_dark_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:exposed_copper_gilded_dark_prismarine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_waxed_oxidized_copper_gilded_dark_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:oxidized_copper_gilded_dark_prismarine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_waxed_weathered_copper_gilded_dark_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:weathered_copper_gilded_dark_prismarine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
     },
     "has_weathered_copper_gilded_dark_prismarine": {
       "conditions": {
@@ -22,7 +106,14 @@
   },
   "requirements": [
     [
+      "has_copper_gilded_dark_prismarine",
+      "has_waxed_copper_gilded_dark_prismarine",
+      "has_exposed_copper_gilded_dark_prismarine",
+      "has_waxed_exposed_copper_gilded_dark_prismarine",
       "has_weathered_copper_gilded_dark_prismarine",
+      "has_waxed_weathered_copper_gilded_dark_prismarine",
+      "has_oxidized_copper_gilded_dark_prismarine",
+      "has_waxed_oxidized_copper_gilded_dark_prismarine",
       "has_the_recipe"
     ]
   ],
