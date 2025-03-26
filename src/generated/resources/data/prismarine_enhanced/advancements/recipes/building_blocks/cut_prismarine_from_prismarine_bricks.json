@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_prismarine": {
+    "has_prismarine_bricks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:prismarine"
+              "minecraft:prismarine_bricks"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prismarine_enhanced:cut_prismarine_from_prismarine"
+        "recipe": "prismarine_enhanced:cut_prismarine_from_prismarine_bricks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_prismarine",
+      "has_prismarine_bricks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prismarine_enhanced:cut_prismarine_from_prismarine"
+      "prismarine_enhanced:cut_prismarine_from_prismarine_bricks"
     ]
   },
   "sends_telemetry_event": false

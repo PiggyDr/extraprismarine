@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 2,
   "ingredient": {
-    "item": "minecraft:prismarine"
+    "item": "minecraft:prismarine_bricks"
   },
   "result": "prismarine_enhanced:cut_prismarine_slab"
 }
