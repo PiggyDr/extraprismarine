@@ -24,7 +24,7 @@ public class PEModelProvider extends BlockModelProvider {
 
         cubeBottomTop("reinforced_prismarine", texLoc("reinforced_prismarine_side"), texLoc("reinforced_prismarine_bottom"), texLoc("reinforced_prismarine_top"));
 
-        sbtWall("reinforced_prismarine_wall_post", "template_wall_sbt_post", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top"); // TODO fix broken particles on these
+        sbtWall("reinforced_prismarine_wall_post", "template_wall_sbt_post", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
         sbtWall("reinforced_prismarine_wall_side", "template_wall_sbt_side", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
         sbtWall("reinforced_prismarine_wall_side_tall", "template_wall_sbt_side_tall", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
         sbtWall("reinforced_prismarine_wall", "wall_sbt_inventory", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
@@ -57,10 +57,7 @@ public class PEModelProvider extends BlockModelProvider {
         engravedPrismarine("sanguine");
     }
 
-    private void cubeColumnConsistent(String name, ResourceLocation side, ResourceLocation end) {
-        withExistingParent(name, texLoc("cube_column_consistent")).texture("side", side).texture("end", end);
-    }
-
+    // TODO investigate replacing this with cube_column_mirrored
     private void cubeColumnConsistentHorizontal(String name, ResourceLocation side, ResourceLocation end) {
         withExistingParent(name, texLoc("cube_column_consistent_horizontal")).texture("side", side).texture("end", end);
     }
