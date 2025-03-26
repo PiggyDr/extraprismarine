@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prismarine_enhanced:waxed_weathered_copper_lattice_from_honeycomb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_weathered_copper_lattice": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:weathered_copper_lattice"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_weathered_copper_lattice",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prismarine_enhanced:waxed_weathered_copper_lattice_from_honeycomb"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -22,6 +22,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import javax.annotation.Nullable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -105,19 +106,9 @@ public class PEBlocks {
         private Holder<RegistryObject<W>> weatheredWaxed = Holder.direct(null);
         private Holder<RegistryObject<W>> oxidizedWaxed = Holder.direct(null);
 
-        private final Map<WeatherState, Holder<RegistryObject<T>>> blockByState = Map.of(
-                WeatherState.UNAFFECTED, clean,
-                WeatherState.EXPOSED, exposed,
-                WeatherState.WEATHERED, weathered,
-                WeatherState.OXIDIZED, oxidized
-        );
+        private final Map<WeatherState, Holder<RegistryObject<T>>> blockByState;
 
-        private final Map<WeatherState, Holder<RegistryObject<W>>> waxedByState = Map.of(
-                WeatherState.UNAFFECTED, cleanWaxed,
-                WeatherState.EXPOSED, exposedWaxed,
-                WeatherState.WEATHERED, weatheredWaxed,
-                WeatherState.OXIDIZED, oxidizedWaxed
-        );
+        private final Map<WeatherState, Holder<RegistryObject<W>>> waxedByState;
 
         public WeatheringGroup(String id, BlockBehaviour.Properties p, WeatheringBlockConstructor<T> constructor, WaxedWeatheringBlockConstructor<W> waxedConstructor) {
 
@@ -132,6 +123,22 @@ public class PEBlocks {
             exposedWaxed = Holder.direct(blockItem("waxed_exposed_" + id, () -> waxedConstructor.create(exposed.get().get(), p)));
             weatheredWaxed = Holder.direct(blockItem("waxed_weathered_" + id, () -> waxedConstructor.create(weathered.get().get(), p)));
             oxidizedWaxed = Holder.direct(blockItem("waxed_oxidized_" + id, () -> waxedConstructor.create(oxidized.get().get(), p)));
+
+            // need to create maps in constructor so they dont reference the null holders
+            blockByState = Map.of(
+                    WeatherState.UNAFFECTED, clean,
+                    WeatherState.EXPOSED, exposed,
+                    WeatherState.WEATHERED, weathered,
+                    WeatherState.OXIDIZED, oxidized
+            );
+
+            waxedByState = Map.of(
+                    WeatherState.UNAFFECTED, cleanWaxed,
+                    WeatherState.EXPOSED, exposedWaxed,
+                    WeatherState.WEATHERED, weatheredWaxed,
+                    WeatherState.OXIDIZED, oxidizedWaxed
+            );
+
         }
 
         public T getUnwaxedBlock(WeatherState weatherState) {

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "prismarine_enhanced:waxed_weathered_copper_gilded_dark_prismarine_from_honeycomb"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_weathered_copper_gilded_dark_prismarine": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "prismarine_enhanced:weathered_copper_gilded_dark_prismarine"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_weathered_copper_gilded_dark_prismarine",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "prismarine_enhanced:waxed_weathered_copper_gilded_dark_prismarine_from_honeycomb"
+    ]
+  },
+  "sends_telemetry_event": false
+}

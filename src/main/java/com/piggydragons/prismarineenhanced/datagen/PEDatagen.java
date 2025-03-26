@@ -24,6 +24,7 @@ public class PEDatagen {
 
         // server
         generator.addProvider(event.includeServer(), new PETagProvider(packOutput, event.getLookupProvider()));
+        generator.addProvider(event.includeServer(), new PERecipeProvider(packOutput));
         generator.addProvider(event.includeServer(), new LootTableProvider(
                 packOutput,
                 Set.of(),
