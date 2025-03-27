@@ -16,10 +16,7 @@ public class PEModelProvider extends BlockModelProvider {
     protected void registerModels() {
         cubeAll("cut_prismarine", texLoc("cut_prismarine"));
 
-        wallPost("cut_prismarine_wall_post", texLoc("cut_prismarine"));
-        wallSide("cut_prismarine_wall_side", texLoc("cut_prismarine"));
-        wallSideTall("cut_prismarine_wall_side_tall", texLoc("cut_prismarine"));
-        wallInventory("cut_prismarine_wall", texLoc("cut_prismarine"));
+        wall("cut_prismarine_wall", texLoc("cut_prismarine"));
 
         cubeBottomTop("reinforced_prismarine", texLoc("reinforced_prismarine_side"), texLoc("reinforced_prismarine_bottom"), texLoc("reinforced_prismarine_top"));
 
@@ -27,6 +24,8 @@ public class PEModelProvider extends BlockModelProvider {
         sbtWall("reinforced_prismarine_wall_side", "template_wall_sbt_side", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
         sbtWall("reinforced_prismarine_wall_side_tall", "template_wall_sbt_side_tall", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
         sbtWall("reinforced_prismarine_wall", "wall_sbt_inventory", "reinforced_prismarine_side", "reinforced_prismarine_bottom", "reinforced_prismarine_top");
+
+        wall("dark_prismarine_wall", mcLoc("block/dark_prismarine"));
 
         cubeColumnConsistentHorizontal("prismarine_pillar", texLoc("prismarine_pillar_side"), texLoc("prismarine_pillar_end"));
         cubeColumnConsistentHorizontal("prismarine_pillar_horizontal", texLoc("prismarine_pillar_side"), texLoc("prismarine_pillar_end"));
@@ -54,6 +53,13 @@ public class PEModelProvider extends BlockModelProvider {
         itemLattice("oxidized_copper_lattice");
 
         engravedPrismarine("sanguine");
+    }
+
+    private void wall(String name, ResourceLocation texture) {
+        wallPost(name + "_post", texture);
+        wallSide(name + "_side", texture);
+        wallSideTall(name + "_side_tall", texture);
+        wallInventory(name, texture);
     }
 
     // TODO investigate replacing this with cube_column_mirrored

@@ -39,6 +39,9 @@ public class PERecipeProvider extends RecipeProvider {
                         .save(recipes);
         stonecutterRecipe(PEBlocks.REINFORCED_PRISMARINE.get(), PEBlocks.REINFORCED_PRISMARINE_WALL.get(), 1, recipes);
 
+        stonecutterRecipe(Blocks.DARK_PRISMARINE, PEBlocks.DARK_PRISMARINE_WALL.get(), 1, recipes);
+        wallShapedRecipe(Blocks.DARK_PRISMARINE, PEBlocks.DARK_PRISMARINE_WALL.get(), 6, recipes);
+
         stonecutterRecipe(Blocks.PRISMARINE, PEBlocks.PRISMARINE_PILLAR.get(), 1, recipes);
 
         coralinePrismarine(Items.BRAIN_CORAL_FAN, Items.QUARTZ, PEBlocks.BRAIN_CORALINE_PRISMARINE.get(), recipes);
@@ -53,17 +56,9 @@ public class PERecipeProvider extends RecipeProvider {
         waxingRecipes(PEBlocks.COPPER_GILDED_DARK_PRISMARINE, recipes);
         waxingRecipes(PEBlocks.COPPER_LATTICES, recipes);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, PEBlocks.COPPER_LATTICES.getClean(), 16)
-                .define('#', Items.COPPER_INGOT)
-                .pattern("###").pattern("###")
-                .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
-                .save(recipes);
+        wallShapedRecipe(Items.COPPER_INGOT, PEBlocks.COPPER_LATTICES.getClean(), 16, recipes);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, PEBlocks.PRISMARINE_TRAPDOOR.get(), 4)
-                .define('#', Blocks.PRISMARINE_BRICKS)
-                .pattern("###").pattern("###")
-                .unlockedBy(getHasName(Items.PRISMARINE), has(Items.PRISMARINE))
-                .save(recipes);
+        wallShapedRecipe(Items.PRISMARINE_BRICKS, PEBlocks.PRISMARINE_TRAPDOOR.get(), 4, recipes);
     }
 
     private void waxingRecipes(PEBlocks.WeatheringGroup<?, ?> group, Consumer<FinishedRecipe> recipes) {
@@ -114,6 +109,14 @@ public class PERecipeProvider extends RecipeProvider {
                 .pattern("P").pattern("I").pattern("P")
                 .unlockedBy(getHasName(Blocks.DARK_PRISMARINE), has(Blocks.DARK_PRISMARINE))
                 .unlockedBy(getHasName(Blocks.DARK_PRISMARINE_SLAB), has(Blocks.DARK_PRISMARINE_SLAB))
+                .save(recipes);
+    }
+
+    private void wallShapedRecipe(ItemLike ingredient, ItemLike result, int resultCount, Consumer<FinishedRecipe> recipes) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, result)
+                .define('#', Blocks.DARK_PRISMARINE)
+                .pattern("###").pattern("###")
+                .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(recipes);
     }
 

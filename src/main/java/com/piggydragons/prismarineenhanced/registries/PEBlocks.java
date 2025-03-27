@@ -37,6 +37,8 @@ public class PEBlocks {
     public static final RegistryObject<ConduitFrameBlock> REINFORCED_PRISMARINE = prismarineBlock("reinforced_prismarine");
     public static final RegistryObject<ConduitFrameBlock.Wall> REINFORCED_PRISMARINE_WALL = prismarineBlock("reinforced_prismarine_wall", ConduitFrameBlock.Wall::new);
 
+    public static final RegistryObject<ConduitFrameBlock.Wall> DARK_PRISMARINE_WALL = prismarineBlock("dark_prismarine_wall", ConduitFrameBlock.Wall::new);
+
     public static final RegistryObject<ConduitFrameBlock.Pillar> PRISMARINE_PILLAR = prismarineBlock("prismarine_pillar", ConduitFrameBlock.Pillar::new);
 
     public static final RegistryObject<ConduitFrameBlock> BRAIN_CORALINE_PRISMARINE = prismarineBlock("brain_coraline_prismarine");

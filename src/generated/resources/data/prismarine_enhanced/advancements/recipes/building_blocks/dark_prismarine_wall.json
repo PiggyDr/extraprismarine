@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_prismarine_bricks": {
+    "has_dark_prismarine": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:prismarine_bricks"
+              "minecraft:dark_prismarine"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "prismarine_enhanced:prismarine_trapdoor"
+        "recipe": "prismarine_enhanced:dark_prismarine_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_prismarine_bricks",
+      "has_dark_prismarine",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "prismarine_enhanced:prismarine_trapdoor"
+      "prismarine_enhanced:dark_prismarine_wall"
     ]
   },
   "sends_telemetry_event": false
